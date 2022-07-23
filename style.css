@@ -1,0 +1,155 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+
+  }
+  
+  
+  body{
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background:url('bg.jpg');
+    background-size: 130%;
+    background-position: center;
+  }
+
+    .mainbox{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin-top: 50px;
+
+  }
+  .mainbox:after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: url('rocket.png') no-repeat;
+    background-size: 75px;
+    left: 105%;
+    bottom: 80px;
+    transform:rotate(-62deg);
+  }
+
+  .box{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 50%;
+    border: 10px solid rgb(16, 56, 80);
+    overflow: hidden;
+    transition: all ease 5s;
+    
+  }
+
+  span{
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+    position: absolute;
+  }
+
+  .span1{
+    clip-path: polygon(0 92%, 100% 50%, 0 8%);
+    background-color:#134074;
+    top: 120px;
+    left: 0;
+    color:#fff;
+    
+  }
+  .span2{
+    clip-path: polygon(100% 92%, 0 50%, 100% 8%);
+    background-color: #13315c;
+    top: 120px;
+    right: 0;
+    color:#fff
+
+  }
+  .span3{
+    clip-path: polygon(50% 0%, 8% 100%, 92% 100%);
+    background-color: #0B2545;
+    bottom: 0;
+    left: 120px;
+    color:#fff
+  }
+  .span4{
+    clip-path: polygon(50% 100%, 92% 0, 8% 0);
+    background-color:#34587A;
+    top: 0;
+    left: 120px;
+    color:#fff
+  }
+  
+  .box1 .span3 b{
+    transform: translate(-50%, -50%) rotate(-270deg);
+ }
+ .box1 .span1 b,
+ .box2 .span1 b{
+   transform: translate(-50%, -50%) rotate(185deg);
+ }
+ .box2 .span3 b{
+   transform: translate(-50%, -50%) rotate(90deg);
+ }
+ .box1 .span4 b,
+ .box2 .span4 b{
+   transform: translate(-50%, -50%) rotate(-85deg);
+
+ }
+ 
+ .box2{
+   width: 100%;
+   height: 100%;
+   transform: rotate(-135deg); 
+
+ }
+ span b{
+   font-size: 24px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+ 
+ }
+ 
+ .spin{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 75px;
+   height: 75px;
+   border-radius: 50%;
+   border: 4px solid #fff;
+   background-color: #ffffff;
+   color: rgb(88, 107, 191);
+   box-shadow: 0 5px 20px #000;
+   font-weight: bold;
+   font-size: 22px;
+   cursor: pointer;
+   z-index: 1000;
+ }
+ .spin:active{
+   width: 70px;
+   height: 70px;
+   font-size: 20px;
+  
+
+ }
+ 
+  .mainbox.animate:after{
+    animation: animateArrow 0.7s ease infinite;
+  }
+  audio{
+    display: none;
+  }
+  @keyframes animateArrow{
+    50%{
+      right: -20px;
+    }
+  }
